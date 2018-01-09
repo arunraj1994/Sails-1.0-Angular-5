@@ -1,0 +1,21 @@
+
+	
+	<div class="middle-container">
+		<div class="content-section  container-fluid">
+			<div  class="show1">
+				<div class="text-center">
+					<h3 class="choose" *ngIf="headerFlag !=='list'">Choose a project category</h3>
+					<h3 *ngIf="headerFlag =='list'" class="categoryphead">Category</h3>
+					<ul class="categries">
+						<li *ngFor="let item of categories1; let i=index" class="col-md-3 col-sm-4 col-xs-12 col-lg-3 category-wrapper">
+							<span class="categorylist_accronym">{{item.category_id}}</span>
+							<div title="{{item.name}}" (click)="onCategoryClick(item.name)" class="boxClass">
+								<div class="{{classArr[i]}}">
+									<p class="categoryList_name">{{item.name}}</p>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+			
